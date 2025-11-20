@@ -1,0 +1,18 @@
+/* src/design/Classic.css */
+.container {
+  background-color: lightyellow;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+ 
+.container h1 {
+  color: darkblue;
+  font-size: 24px;
+}
+ 
+.container p {
+  color: gray;
+  font-size: 16px;
+}
+ 

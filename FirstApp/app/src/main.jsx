@@ -9,7 +9,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Layout from "./pages/Layout";
 import Home from "./pages/Home";
 import About from "./pages/About.jsx";
-import Box from './components/Box.jsx';
+import Card from './components/Card.jsx';
 
 /* const router = createBrowserRouter([
   {
@@ -27,7 +27,7 @@ import Box from './components/Box.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-  <Box  />
+  <Card  />
   </React.StrictMode>
 )
 

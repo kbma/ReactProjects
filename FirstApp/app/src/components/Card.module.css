@@ -1,0 +1,18 @@
+/* src/design/Card.module.css */
+.card {
+  background-color: lavender;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+}
+ 
+.cardTitle {
+  color: purple;
+  font-size: 22px;
+}
+ 
+.cardText {
+  font-size: 16px;
+  color: gray;
+}
+ 
