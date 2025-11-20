@@ -1,4 +1,4 @@
-const API_KEY = "c4b8361eb1dbfaa49ef2ede3c6e819f6";
+const API_KEY = "******************************";
  
 export const getWeather = async (ville) => {
   try {
