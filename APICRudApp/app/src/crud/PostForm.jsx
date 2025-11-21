@@ -22,7 +22,7 @@ export default function PostForm({ setMessage }) {
             const res = await fetch(API_URL, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ title, body, userId: 1 })
+                body: JSON.stringify({ title, body,category, userId: 1 })
             })
 
             if (!res.ok) {
