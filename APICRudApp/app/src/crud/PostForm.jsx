@@ -1,21 +1,22 @@
 import { useState, useContext } from "react"
 import { ApiContext } from "../App"
- 
+
 export default function PostForm({ setMessage }) {
     const [title, setTitle] = useState("")
     const [body, setBody] = useState("")
+    const [category, setCategory] = useState("")
     const [loading, setLoading] = useState(false)
- 
+
     const API_URL = useContext(ApiContext)
- 
+
     const handleSubmit = async (e) => {
         e.preventDefault()
- 
+
         if (!title.trim() || !body.trim()) {
             if (setMessage) setMessage("Veuillez remplir le titre et le contenu")
             return
         }
- 
+
         setLoading(true)
         try {
             const res = await fetch(API_URL, {
@@ -23,11 +24,11 @@ export default function PostForm({ setMessage }) {
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ title, body, userId: 1 })
             })
- 
+
             if (!res.ok) {
                 throw new Error(`Request failed with status ${res.status}`)
             }
- 
+
             await res.json()
             if (setMessage) setMessage("Article ajouté avec succès !")
             setTitle("")
@@ -39,11 +40,11 @@ export default function PostForm({ setMessage }) {
             setLoading(false)
         }
     }
- 
+
     return (
         <form onSubmit={handleSubmit} style={{ marginBottom: "20px" }}>
             <h2>Ajouter un Article</h2>
- 
+
             <input
                 placeholder="Titre"
                 value={title}
@@ -54,11 +55,22 @@ export default function PostForm({ setMessage }) {
                 value={body}
                 onChange={(e) => setBody(e.target.value)}
             />
- 
+            {/* Liste déroulante pour la catégorie */}
+            <select
+                value={category}
+                onChange={(e) => setCategory(e.target.value)}
+            >
+                <option value="">Sélectionner une catégorie</option>
+                <option value="Technologie">Technologie</option>
+                <option value="Science">Science</option>
+                <option value="Économie">Économie</option>
+                <option value="Santé">Santé</option>
+            </select>
+
             <button type="submit" disabled={loading}>
                 {loading ? "Envoi..." : "Ajouter"}
             </button>
         </form>
     )
 }
- 
+

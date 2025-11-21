@@ -5,6 +5,7 @@ import { ApiContext } from "../App"
 export default function PostItem({ post, deletePost, setPosts, setMessage }) {
     const [editing, setEditing] = useState(false)
     const [title, setTitle] = useState(post.title)
+    const [category, setCategory] = useState(post.category)
     const [body, setBody] = useState(post.body || "")
     const API_URL = useContext(ApiContext)
  
@@ -81,11 +82,13 @@ export default function PostItem({ post, deletePost, setPosts, setMessage }) {
                 <div>
                     <input value={title} onChange={(e) => setTitle(e.target.value)} />
                     <textarea value={body} onChange={(e) => setBody(e.target.value)} />
+                    <select value={category} onChange={(e) => setCategory(e.target.value)} />
                 </div>
             ) : (
                 <>
                     <h3>{post.title}</h3>
                     <p>{post.body}</p>
+                    <p>{post.category}</p>
                 </>
             )}
  
