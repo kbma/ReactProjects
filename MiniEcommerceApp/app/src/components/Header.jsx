@@ -9,7 +9,7 @@ export default function Header(){
 
   return (
     <header style={{display:"flex", justifyContent:"space-between", alignItems:"center", padding:12, borderBottom:"1px solid #eee"}}>
-      <Link to="/"><h2>Mini E-commerce</h2></Link>
+      <Link to="/"><h2>Mini E-commerce by Kamel</h2></Link>
       <nav>
         <Link to="/cart">Panier ({totalItems})</Link>
       </nav>
